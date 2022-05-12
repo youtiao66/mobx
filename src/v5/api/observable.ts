@@ -50,6 +50,9 @@ function assertValidOption(key: string) {
         fail(`invalid option for (extend)observable: ${key}`)
 }
 
+/**
+ * 获取创建可观察对象参数
+ */
 export function asCreateObservableOptions(thing: any): CreateObservableOptions {
     if (thing === null || thing === undefined) return defaultCreateObservableOptions
     if (typeof thing === "string") return { name: thing, deep: true, proxy: true }

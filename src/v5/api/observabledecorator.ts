@@ -37,6 +37,14 @@ export function createDecoratorForEnhancer(enhancer: IEnhancer<any>): IObservabl
                     ? descriptor.initializer.call(target)
                     : descriptor.value
                 : undefined
+            /**
+             * asObservableObject，其传入参数为原始对象，
+             * 返回值是ObservableObjectAdministration类型对象adm
+             * 同时将adm绑定到$mobx属性上，共对象使用
+             *
+             * 并且链式调用了 addObservableProp，
+             * 通过 enhancer，把 propertyName 属性赋上劫持后的 initialValue
+             */
             asObservableObject(target).addObservableProp(propertyName, initialValue, enhancer)
         }
     )

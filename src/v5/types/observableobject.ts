@@ -73,6 +73,11 @@ export type IObjectWillChange<T = any> =
           name: PropertyKey
       }
 
+/**
+ * 可以看出 adm 其实也是个封装类，具体围绕 values 展开，
+ * 而 values 是个 Map，键为 PropertyKey，值为 ObservableValue像 read，write 等方法，
+ * 最后都是调用的 ObservableValue 提供的 api
+ */
 export class ObservableObjectAdministration
     implements IInterceptable<IObjectWillChange>, IListenable {
     keysAtom: IAtom

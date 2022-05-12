@@ -49,6 +49,9 @@ export function extendObservable<A extends Object, B extends Object>(
     return target as any
 }
 
+/**
+ * 从创建可观察对象参数中获取默认装饰器
+ */
 export function getDefaultDecoratorFromObjectOptions(
     options: CreateObservableOptions
 ): IObservableDecorator {
