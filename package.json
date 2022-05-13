@@ -26,6 +26,7 @@
     "quick-build": "tsc --pretty",
     "small-build": "node scripts/build.js",
     "build": "node scripts/build.js",
+    "build:dev": "tsc --rootDir src --pretty --declaration false --outDir dist",
     "release": "node scripts/publish.js",
     "publish-script": "yarn release",
     "docs:build": "yarn --cwd website build",
