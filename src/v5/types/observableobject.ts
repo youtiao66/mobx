@@ -330,6 +330,13 @@ export interface IIsObservableObject {
     $mobx: ObservableObjectAdministration
 }
 
+/**
+ * 转换为可观测对象
+ * @param target 目标
+ * @param name 名称
+ * @param defaultEnhancer 默认增强器
+ * @returns 可观测对象管理封装实例
+ */
 export function asObservableObject(
     target: any,
     name: PropertyKey = "",

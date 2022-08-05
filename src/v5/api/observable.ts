@@ -190,7 +190,10 @@ const observableFactories: IObservableFactories = {
         if (o.proxy === false) {
             return extendObservable({}, props, decorators, o) as any
         } else {
+            console.log("observableFactories.object o =>", o)
             const defaultDecorator = getDefaultDecoratorFromObjectOptions(o)
+            console.log("observableFactories.object defaultDecorator =>")
+            console.dir(defaultDecorator)
             const base = extendObservable({}, undefined, undefined, o) as any
             const proxy = createDynamicObservableObject(base)
             extendObservableObjectWithProperties(proxy, props, decorators, defaultDecorator)

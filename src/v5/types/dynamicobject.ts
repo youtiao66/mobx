@@ -18,6 +18,10 @@ function isPropertyKey(val) {
 
 // Optimization: we don't need the intermediate objects and could have a completely custom administration for DynamicObjects,
 // and skip either the internal values map, or the base object with its property descriptors!
+/**
+ * 我们不需要中间对象，可以对动态对象进行完全定制的管理
+ * 然后跳过内部值映射，或者跳过基本对象及其属性描述符！
+ */
 const objectProxyTraps: ProxyHandler<any> = {
     has(target: IIsObservableObject, name: PropertyKey) {
         if (name === $mobx || name === "constructor" || name === mobxDidRunLazyInitializersSymbol)
@@ -71,6 +75,11 @@ const objectProxyTraps: ProxyHandler<any> = {
     }
 }
 
+/**
+ * 创建动态可观测对象
+ * @param base 基本可观测对象
+ * @returns
+ */
 export function createDynamicObservableObject(base) {
     const proxy = new Proxy(base, objectProxyTraps)
     base[$mobx].proxy = proxy

@@ -66,6 +66,12 @@ export function initializeInstance(target: DecoratorTarget) {
     }
 }
 
+/**
+ * 创建属性装饰器
+ * @param propertyInitiallyEnumerable 属性初始化是否可枚举
+ * @param propertyCreator 属性构造器
+ * @returns 装饰器工厂函数
+ */
 export function createPropDecorator(
     propertyInitiallyEnumerable: boolean,
     propertyCreator: PropertyCreator

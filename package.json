@@ -27,6 +27,7 @@
     "small-build": "node scripts/build.js",
     "build": "node scripts/build.js",
     "build:dev": "tsc --rootDir src --pretty --declaration false --outDir dist",
+    "watch:dev": "tsc --rootDir src --pretty --declaration false --outDir dist --watch",
     "release": "node scripts/publish.js",
     "publish-script": "yarn release",
     "docs:build": "yarn --cwd website build",

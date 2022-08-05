@@ -186,5 +186,5 @@ export const ownKeys: (target: any) => PropertyKey[] =
     typeof Reflect !== "undefined" && Reflect.ownKeys
         ? Reflect.ownKeys
         : Object.getOwnPropertySymbols
-        ? (obj) => Object.getOwnPropertyNames(obj).concat(Object.getOwnPropertySymbols(obj) as any)
+        ? obj => Object.getOwnPropertyNames(obj).concat(Object.getOwnPropertySymbols(obj) as any)
         : /* istanbul ignore next */ Object.getOwnPropertyNames

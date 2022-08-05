@@ -21,6 +21,15 @@ export interface IAtom extends IObservable {
     reportChanged()
 }
 
+/**
+ * 原子类
+ * 用来通知 Mobx 某些 observable 数据源被观察或发生了改变。
+ * 当数据源被使用或者不再使用的时候, Mobx 会通知 Atom.
+ *
+ * 这个类继承自 IObservable 所以也是可观察的，主要用于那些基本 API 不满足的场景，更加灵活。一般情况下不需要使用
+ *
+ * @see https://cn.mobx.js.org/refguide/extending.html
+ */
 export class Atom implements IAtom {
     isPendingUnobservation = false // for effective unobserving. BaseAtom has true, for extra optimization, so its onBecomeUnobserved never gets called, because it's not needed
     isBeingObserved = false
